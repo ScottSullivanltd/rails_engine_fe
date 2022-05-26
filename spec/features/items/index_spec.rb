@@ -22,7 +22,7 @@ RSpec.describe "Merchant Items Index Page", type: :feature do
     expect(page).to have_link(@item3.name)
     click_link(@item3.name)
 
-    expect(current_path).to eq(merchant_item_path(@item3.id))
-    expect(current_path).to_not eq(merchant_item_path(@item1.id))
+    expect(current_path).to eq(merchant_item_path(@merchant, @item3.id))
+    expect(current_path).to_not eq(merchant_item_path(@merchant, @item1.id))
   end
 end
